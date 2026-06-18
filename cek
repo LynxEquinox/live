@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Tv</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(-45deg,#0f172a,#1e293b,#312e81,#0f172a);
+    background-size:400% 400%;
+    animation:bg 12s ease infinite;
+    overflow:hidden;
+}
+
+.container{
+    text-align:center;
+    padding:40px;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,0.08);
+    border:1px solid rgba(255,255,255,0.15);
+    border-radius:25px;
+    box-shadow:0 0 40px rgba(0,0,0,0.4);
+}
+
+h1{
+    color:white;
+    font-size:4rem;
+    font-weight:800;
+    text-transform:uppercase;
+    letter-spacing:4px;
+    text-shadow:
+        0 0 10px #00ffff,
+        0 0 20px #00ffff,
+        0 0 40px #00ffff;
+    animation:pulse 2s infinite;
+}
+
+p{
+    color:#dbeafe;
+    margin-top:15px;
+    font-size:1.1rem;
+}
+
+.circle{
+    position:absolute;
+    border-radius:50%;
+    background:rgba(255,255,255,0.08);
+    animation:float 10s linear infinite;
+}
+
+.circle:nth-child(1){
+    width:120px;
+    height:120px;
+    left:10%;
+    top:20%;
+}
+
+.circle:nth-child(2){
+    width:200px;
+    height:200px;
+    right:10%;
+    bottom:10%;
+    animation-duration:15s;
+}
+
+.circle:nth-child(3){
+    width:80px;
+    height:80px;
+    left:70%;
+    top:15%;
+    animation-duration:8s;
+}
+
+@keyframes bg{
+    0%{background-position:0% 50%;}
+    50%{background-position:100% 50%;}
+    100%{background-position:0% 50%;}
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.05);}
+}
+
+@keyframes float{
+    0%{transform:translateY(0px);}
+    50%{transform:translateY(-30px);}
+    100%{transform:translateY(0px);}
+}
+</style>
+</head>
+<body>
+
+<div class="circle"></div>
+<div class="circle"></div>
+<div class="circle"></div>
+
+<div class="container">
+    <h1>Live TV</h1>
+    <p>===== SPESIAL FIFA WORLD CUP 2026 =====</p>
+</div>
+
+</body>
+</html>
+
+<script>
+document.addEventListener('keydown', function(e) {
+    if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.key.toLowerCase() === 'u') ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'i') ||
+        (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === 'j')
+    ) {
+        e.preventDefault();
+        return false;
+    }
+});
+
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+</script>
